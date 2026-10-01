@@ -350,6 +350,7 @@ input, textarea {
   padding-bottom: 60px;
   position: relative;
   overflow: hidden;
+  min-height: 100vh; /* чтобы первый экран был во всю высоту экрана */
 }
 
 .hero::before {
@@ -363,7 +364,7 @@ input, textarea {
   background-size: cover;
   background-position: center;
   z-index: -1;
-  filter: brightness(0.6); /* затемнение, чтобы текст был контрастным */
+  filter: brightness(0.6); /* затемнение для читаемости текста */
 }
 
 .hero h1,
