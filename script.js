@@ -1,21 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Работа бургер-меню (для мобильных)
   const burger = document.querySelector('.burger');
   const navLinks = document.querySelector('.nav-links');
 
   if (burger && navLinks) {
     burger.addEventListener('click', () => {
       navLinks.classList.toggle('active');
+      burger.classList.toggle('active'); // для анимации полосок (опционально)
     });
   }
 
-  // Плавный скролл по якорям (чтобы не «прыгало», а ехало)
+  // Плавный скролл по якорям
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault(); // отменяем стандартный резкий переход
-      
+      e.preventDefault();
+
       if (navLinks) {
-        navLinks.classList.remove('active'); // закрываем меню на мобильном
+        navLinks.classList.remove('active');
       }
 
       const targetId = this.getAttribute('href');
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (targetElement) {
         window.scrollTo({
-          top: targetElement.offsetTop - 80, // -80px, потому что у нас фиксированная шапка
+          top: targetElement.offsetTop - 80,
           behavior: 'smooth'
         });
       }
