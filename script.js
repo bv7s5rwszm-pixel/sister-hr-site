@@ -5,17 +5,21 @@ document.addEventListener('DOMContentLoaded', () => {
   if (burger && navLinks) {
     burger.addEventListener('click', () => {
       navLinks.classList.toggle('active');
+      burger.classList.toggle('active'); // Это включает анимацию крестика
     });
   }
 
-  // Плавный скролл (чтобы при клике по меню страница не «прыгала», а плавно ехала)
+  // Плавный скролл
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       
-      // Если меню открыто — закрываем его после клика
       if (navLinks) {
         navLinks.classList.remove('active');
+      }
+      // Возвращаем бургер в исходное состояние (полоски)
+      if (burger) {
+        burger.classList.remove('active');
       }
 
       const targetId = this.getAttribute('href');
@@ -23,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (targetElement) {
         window.scrollTo({
-          top: targetElement.offsetTop - 80, // -80px, чтобы шапка не перекрывала заголовок
+          top: targetElement.offsetTop - 80,
           behavior: 'smooth'
         });
       }
