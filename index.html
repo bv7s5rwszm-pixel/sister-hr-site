@@ -196,13 +196,17 @@
       padding: 0;
       margin: 40px 0 0 0;
     }
-    .process-steps li {
-      position: relative;
-      padding-left: 60px;
-      margin-bottom: 30px;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s forwards;
+   .process-steps li {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.process-steps li.visible {
+  opacity: 1;
+  transform: translateY(0);
     }
     .step-num {
       position: absolute;
