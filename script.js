@@ -5,15 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
   if (burger && navLinks) {
     burger.addEventListener('click', () => {
       navLinks.classList.toggle('active');
-      burger.classList.toggle('active'); // для анимации полосок (опционально)
     });
   }
 
-  // Плавный скролл по якорям
+  // Плавный скролл (чтобы при клике по меню страница не «прыгала», а плавно ехала)
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
-
+      
+      // Если меню открыто — закрываем его после клика
       if (navLinks) {
         navLinks.classList.remove('active');
       }
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (targetElement) {
         window.scrollTo({
-          top: targetElement.offsetTop - 80,
+          top: targetElement.offsetTop - 80, // -80px, чтобы шапка не перекрывала заголовок
           behavior: 'smooth'
         });
       }
