@@ -239,6 +239,16 @@
    @media (max-width: 768px) {
   .navbar {
     padding: 15px 20px;
+    /* Анимация: полоски → крестик */
+.burger.active .bar:nth-child(2) {
+  opacity: 0; /* Средняя полоска исчезает */
+}
+.burger.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px); /* Верхняя — влево-вверх по диагонали */
+}
+.burger.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);  /* Нижняя — влево-вниз по диагонали */
+}
   }
 
   /* Полоски бургера — теперь они точно будут видны */
