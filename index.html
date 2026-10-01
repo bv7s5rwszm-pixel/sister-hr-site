@@ -3,40 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Кадровик и охрана труда | [Бойкова Светлана Артемовна]</title>
+  <title>Кадровик и охрана труда | Бойкова Светлана Артемовна</title>
+
   <!-- Премиальные шрифты -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+
   <!-- Иконки -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    /* Переменные */
+    :root {
+      --color-primary: #2e7d32;
+    }
+
+    /* Базовые настройки */
     body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif; /* утончённый, чистый */
-  color: #333;
-  background: #fff;
-}
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+      background: #fff;
+    }
 
-.logo {
-  font-family: 'Playfair Display', serif; /* благородный, с характером */
-  font-weight: 700;
-  font-size: 24px;
-  text-decoration: none;
-  color: var(--color-primary, #2e7d32);
-}
+    /* Навигация */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 24px;
+      text-decoration: none;
+      color: var(--color-primary);
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: var(--color-primary);
+    }
 
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  line-height: 1.1;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.15); /* мягкая тень вместо жёсткой */
-}
-
-.card h3,
-.step-content h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-}
     /* Главный экран с фоном */
     .hero {
       text-align: center;
@@ -45,24 +71,24 @@
       position: relative;
       overflow: hidden;
       min-height: 100vh;
-      color: white; /* текст белый, чтобы читался на фоне */
+      color: white;
     }
     .hero::before {
       content: "";
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
-      background-image: url('hero-bg.jpg'); /* ТВОЯ КАРТИНКА */
+      background-image: url('hero-bg.jpg');
       background-size: cover;
       background-position: center;
       z-index: -1;
-      filter: brightness(0.55); /* затемнение, чтобы текст читался */
+      filter: brightness(0.55);
     }
     .hero h1 {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-size: 3rem;
-      line-height: 1.2;
+      line-height: 1.1;
       margin-bottom: 20px;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      text-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
     .hero p {
       font-size: 1.2rem;
@@ -74,43 +100,35 @@
     }
 
     /* Кнопки */
-   .btn {
-  display: inline-block;
-  padding: 14px 36px;
-  border-radius: 8px; /* чуть мягче, чем 50px */
-  text-decoration: none;
-  font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.25); /* лёгкая зелёная тень */
-}
-
-/* Зелёная заливка */
-.btn-primary {
-  background-color: var(--color-primary, #2e7d32);
-  color: white;
-  border: none;
-}
-.btn-primary:hover {
-  background-color: #236628; /* чуть темнее при наведении */
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.35);
-}
-
-/* Оставляем контурную кнопку как была */
-.btn-outline {
-  background: transparent;
-  border: 2px solid var(--color-primary, #2e7d32);
-  color: var(--color-primary, #2e7d32);
-}
-.btn-outline:hover {
-  background: var(--color-primary, #2e7d32);
-  color: white;
-}
-
+    .btn {
+      display: inline-block;
+      padding: 14px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
-    .btn:hover {
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: white;
+      border: none;
+      box-shadow: 0 4px 12px rgba(46, 125, 50, 0.25);
+    }
+    .btn-primary:hover {
+      background-color: #236628;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(46, 125, 50, 0.35);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--color-primary);
+      color: var(--color-primary);
+    }
+    .btn-outline:hover {
+      background: var(--color-primary);
+      color: white;
       transform: translateY(-2px);
     }
 
@@ -146,12 +164,13 @@
     }
     .card i {
       font-size: 40px;
-      color: var(--color-primary, #2e7d32);
+      color: var(--color-primary);
       margin-bottom: 15px;
     }
     .card h3 {
       margin: 0 0 10px 0;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
     }
 
     /* Контакты */
@@ -170,7 +189,7 @@
       margin: 8px 0;
     }
 
-    /* Шаги процесса */
+    /* Шаги процесса — с анимацией появления */
     .process-steps {
       list-style: none;
       counter-reset: step;
@@ -181,6 +200,9 @@
       position: relative;
       padding-left: 60px;
       margin-bottom: 30px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
     }
     .step-num {
       position: absolute;
@@ -188,7 +210,7 @@
       top: 0;
       width: 44px;
       height: 44px;
-      background: var(--color-primary, #2e7d32);
+      background: var(--color-primary);
       color: white;
       border-radius: 50%;
       display: flex;
@@ -199,7 +221,21 @@
     }
     .step-content h3 {
       margin: 0 0 8px 0;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+
+    /* Задержки для каждого шага */
+    .process-steps li:nth-child(1) { animation-delay: 0.1s; }
+    .process-steps li:nth-child(2) { animation-delay: 0.2s; }
+    .process-steps li:nth-child(3) { animation-delay: 0.3s; }
+    .process-steps li:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* Статистика */
@@ -218,10 +254,10 @@
     }
     .stat-number {
       display: block;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       font-weight: 700;
-      color: var(--color-primary, #2e7d32);
+      color: var(--color-primary);
     }
     .stat-label {
       font-size: 0.9rem;
@@ -238,70 +274,61 @@
     }
 
     /* Адаптив для мобильных */
-   @media (max-width: 768px) {
-  .navbar {
-    padding: 15px 20px;
-    /* Анимация: полоски → крестик */
-.burger.active .bar:nth-child(2) {
-  opacity: 0; /* Средняя полоска исчезает */
-}
-.burger.active .bar:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px); /* Верхняя — влево-вверх по диагонали */
-}
-.burger.active .bar:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);  /* Нижняя — влево-вниз по диагонали */
-}
-  }
+    @media (max-width: 768px) {
+      .navbar { padding: 15px 20px; }
 
-  /* Полоски бургера — теперь они точно будут видны */
-  .burger {
-    cursor: pointer;
-    display: block;
-  }
-  .burger .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #333; /* чёрный цвет полосок */
-    margin: 5px 0;
-    transition: all 0.3s ease;
-  }
+      /* Полоски бургера */
+      .burger {
+        cursor: pointer;
+        display: block;
+      }
+      .burger .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+        transform-origin: left center;
+      }
 
-  /* Мобильное меню: скрыто по умолчанию */
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    display: none; /* скрыто */
-    gap: 24px;
-    z-index: 1000;
-  }
+      /* Анимация: полоски → крестик */
+      .burger.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+      .burger.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+      .burger.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
 
-  /* Показываем меню, когда JS добавит класс active */
-  .nav-links.active {
-    display: flex;
-  }
+      /* Мобильное меню */
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        display: none;
+        gap: 24px;
+        z-index: 1000;
+      }
+      .nav-links.active {
+        display: flex;
+      }
 
-  .hero h1 {
-    font-size: 2rem;
-  }
-  .stats-grid,
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+      .hero h1 { font-size: 2rem; }
+      .stats-grid, .cards-grid { grid-template-columns: 1fr; }
+    }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
   <nav class="navbar">
-   <a href="#" class="logo">Кадровое агенство</a>
+    <a href="#" class="logo">Светлана Бойкова</a>
     <ul class="nav-links">
       <li><a href="#about">О специалисте</a></li>
       <li><a href="#services">Услуги</a></li>
@@ -318,7 +345,7 @@
   <section id="hero" class="hero">
     <h1>Светлана Бойкова: кадровый учёт и охрана труда — без штрафов и нервов</h1>
     <p>13 лет экспертизы. Помогаю бизнесу работать по закону и избегать штрафов.</p>
-    <a href="#contacts" class="btn">Получить консультацию</a>
+    <a href="#contacts" class="btn btn-primary">Получить консультацию</a>
   </section>
 
   <section id="about" class="section">
@@ -406,22 +433,20 @@
     </div>
   </section>
 
- <section id="contacts" class="section bg-light">
-  <div class="container contact-block">
-    <h2>Свяжитесь со мной</h2>
-
-    <div class="contact-buttons">
-      <a href="tel:+79268344724" class="btn btn-outline">Позвонить</a>
-      <a href="mailto:egor.egor0607@yandex.ru" class="btn btn-outline">Написать на почту</a>
-      <a href="https://t.me/svetlana_boykova88" class="btn btn-outline">Telegram</a>
+  <section id="contacts" class="section bg-light">
+    <div class="container contact-block">
+      <h2>Свяжитесь со мной</h2>
+      <div class="contact-buttons">
+        <a href="tel:+79268344724" class="btn btn-outline">📞 Позвонить</a>
+        <a href="mailto:egor.egor0607@yandex.ru" class="btn btn-outline">✉️ Написать на почту</a>
+        <a href="https://t.me/svetlana_boykova88" class="btn btn-outline" target="_blank" rel="noopener noreferrer">💬 Telegram</a>
+      </div>
+      <div class="contact-info" style="margin-top: 30px;">
+        <p><i class="fas fa-map-marker-alt"></i> Город: Москва</p>
+        <p><i class="fas fa-clock"></i> Режим работы: Пн–Пт, 9:00–18:00</p>
+      </div>
     </div>
-
-    <div class="contact-info" style="margin-top: 30px;">
-      <p><i class="fas fa-map-marker-alt"></i> Город: Москва</p>
-      <p><i class="fas fa-clock"></i> Режим работы: Пн–Пт, 9:00–18:00</p>
-    </div>
-  </div>
-</section>
+  </section>
 
   <footer class="footer">
     <div class="container">
