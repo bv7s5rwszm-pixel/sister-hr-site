@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (burger && navLinks) {
     burger.addEventListener('click', () => {
       navLinks.classList.toggle('active');
-      burger.classList.toggle('active'); // Это включает анимацию крестика
+      burger.classList.toggle('active');
     });
   }
 
@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (navLinks) {
         navLinks.classList.remove('active');
       }
-      // Возвращаем бургер в исходное состояние (полоски)
       if (burger) {
         burger.classList.remove('active');
       }
@@ -33,4 +32,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Анимация шагов при скролле
+  const steps = document.querySelectorAll('.process-steps li');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 150);
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  steps.forEach(step => observer.observe(step));
 });
