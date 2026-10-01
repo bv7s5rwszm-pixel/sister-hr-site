@@ -237,11 +237,11 @@
 
     /* Адаптив для мобильных */
     @media (max-width: 768px) {
-      .navbar { padding: 15px 20px; }
-      .nav-links { display: none; } /* тут нужен JS для бургер-меню */
-      .hero h1 { font-size: 2rem; }
-      .stats-grid, .cards-grid { grid-template-columns: 1fr; }
-    }
+  .navbar { padding: 15px 20px; }
+  .nav-links { display: none; } /* ← вот это ломает бургер */
+  .hero h1 { font-size: 2rem; }
+  .stats-grid, .cards-grid { grid-template-columns: 1fr; }
+}
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
